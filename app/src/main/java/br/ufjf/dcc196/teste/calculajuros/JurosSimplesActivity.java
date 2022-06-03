@@ -38,6 +38,18 @@ public class JurosSimplesActivity extends AppCompatActivity {
 
     }
 
+    public void calcularClick(View view){
+        Double taxaDeJuros;
+        Integer periodos;
+
+        taxaDeJuros = Double.parseDouble(editTextTaxaDeJuros.getText().toString())/100.0;
+        periodos = Integer.parseInt(editTextPeriodos.getText().toString());
+
+        valorFinal = valorPresente*(1+taxaDeJuros*periodos);
+        textViewResultado.setText(valorFinal.toString());
+    }
+
+
     public void retornarClick(View view){
         Intent resultado = new Intent();
         resultado.putExtra("valorFinal", valorFinal);
