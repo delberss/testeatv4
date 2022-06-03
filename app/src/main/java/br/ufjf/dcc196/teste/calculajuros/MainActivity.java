@@ -49,4 +49,19 @@ public class MainActivity extends AppCompatActivity {
             editTextValorPresente.requestFocus();
         }
     }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(resultCode == RESULT_OK){
+            Bundle extras = data.getExtras();
+            Double valorFinal = extras.getDouble("valorFinal");
+            if(requestCode == REQUEST_JUROS_SIMPLES){
+                textViewValorFinal.setText("Simples: R$"+valorFinal.toString());
+            }
+            else if(requestCode == REQUEST_JUROS_COMPOSTOS){
+                textViewValorFinal.setText("Compostos: R$"+valorFinal.toString());
+            }
+        }
+    }
 }
