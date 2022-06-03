@@ -45,4 +45,11 @@ public class JurosCompostosActivity extends AppCompatActivity {
         textViewResultado.setText(valorFinal.toString());
 
     }
+
+    public void retornarClick(View view){
+        Intent resultado = new Intent();
+        resultado.putExtra("valorFinal", valorFinal);
+        setResult(RESULT_OK, resultado);
+        finish();
+    }
 }
