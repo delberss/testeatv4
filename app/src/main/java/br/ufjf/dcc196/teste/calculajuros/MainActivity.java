@@ -12,6 +12,8 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
     public static final int REQUEST_JUROS_SIMPLES = 1;
 
+    public static final int REQUEST_JUROS_COMPOSTOS = 2;
+
     EditText editTextValorPresente;
     TextView textViewValorFinal;
 
@@ -30,6 +32,18 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = new Intent(MainActivity.this,JurosSimplesActivity.class);
             intent.putExtra("valorPresente", valorPresente);
             startActivityForResult(intent, REQUEST_JUROS_SIMPLES);
+        }catch (Exception e){
+            editTextValorPresente.selectAll();
+            editTextValorPresente.requestFocus();
+        }
+    }
+
+    public void jurosCompostosClick(View view){
+        try {
+            Double valorPresente = Double.parseDouble((editTextValorPresente.getText().toString()));
+            Intent intent = new Intent(MainActivity.this,JurosCompostosActivity.class);
+            intent.putExtra("valorPresente", valorPresente);
+            startActivityForResult(intent, REQUEST_JUROS_COMPOSTOS);
         }catch (Exception e){
             editTextValorPresente.selectAll();
             editTextValorPresente.requestFocus();
