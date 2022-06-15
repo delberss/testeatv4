@@ -13,6 +13,8 @@ public class JurosSimplesActivity extends AppCompatActivity {
     private EditText editTextTaxaDeJuros;
     private EditText editTextPeriodos;
 
+    private Double porcentagem;
+
     private TextView textViewResultado;
     private TextView textViewValorPresente;
 
@@ -42,18 +44,23 @@ public class JurosSimplesActivity extends AppCompatActivity {
         Double taxaDeJuros;
         Integer periodos;
 
+
         taxaDeJuros = Double.parseDouble(editTextTaxaDeJuros.getText().toString())/100.0;
         periodos = Integer.parseInt(editTextPeriodos.getText().toString());
 
         valorFinal = valorPresente*(1+taxaDeJuros*periodos);
-        textViewResultado.setText(valorFinal.toString());
-    }
 
+        porcentagem = ((valorFinal*100)/valorPresente);
+        textViewResultado.setText(valorFinal.toString() + "\nRelação: " + porcentagem + "%");
+    }
 
     public void retornarClick(View view){
         Intent resultado = new Intent();
+
         resultado.putExtra("valorFinal", valorFinal);
-        setResult(RESULT_OK, resultado);
+        resultado.putExtra("porcentagem", porcentagem);
+
+        setResult(MainActivity.RESULT_JUROS_SIMPLES, resultado);
         finish();
     }
 }

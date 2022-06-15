@@ -41,11 +41,24 @@
         android:layout_marginTop="24dp"
         android:onClick="jurosSimplesClick"
         android:text="Juros simples"
-        app:backgroundTint="#673AB7"
+        app:backgroundTint="#3F51B5"
         app:layout_constraintEnd_toStartOf="@+id/buttonJurosCompostos"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextValorPresente" />
+
+    <Button
+        android:id="@+id/buttonRelacaoValorFuturo"
+        android:layout_width="186dp"
+        android:layout_height="62dp"
+        android:layout_marginTop="76dp"
+        android:onClick="relacaoValorFuturoClick"
+        android:text="Relação Valor Futuro"
+        app:backgroundTint="#FFC107"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonJurosCompostos" />
 
     <Button
         android:id="@+id/buttonJurosCompostos"
@@ -53,7 +66,7 @@
         android:layout_height="60dp"
         android:onClick="jurosCompostosClick"
         android:text="Juros compostos"
-        app:backgroundTint="#673AB7"
+        app:backgroundTint="#009688"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/buttonJurosSimples"
@@ -63,10 +76,11 @@
         android:id="@+id/textViewValorFinal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="xxxx"
+        android:layout_marginTop="176dp"
+        android:text="xxx"
         android:textSize="34sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buttonJurosSimples" />
 
